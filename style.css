@@ -6,8 +6,12 @@
     --main-trans-color: rgba(33, 33, 92, 0.712);
 }
 
-
-body {
+body{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+.body1 {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
@@ -84,6 +88,118 @@ body {
 .login-link{
     cursor: pointer;
 }
+.navbar-background{
+    background-color: #80cbc4 ;
+    padding-left: 10px;
+}
+.nav-title-word{
+    font-size: 22px;
+    font-weight: bold;
+    padding-left: 20px;
+    padding-right: 20px;
+   
+}
+.side-box{
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+}
+.prof-img-side{
+    height: 100px;
+    width: 100px;
+    margin-top: 100px;
+    
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.363);
+    border-radius: 100%;
+}
+.side-span1{
+    padding-top: 10px;
+    font-size: 18px;
+font-weight: bold;
+}
+
+.side-span2{
+    font-size: 14px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+
+}
+.side-button1{
+    width: 90%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+}
+.slider-background{
+    
+    width: 82vw;
+}
+.advanced-s:hover{
+    font-weight: bold;
+    cursor: pointer;
+    transition-duration: 0.8s;
+}
+.category-title{
+    font-size: 34px;
+    font-weight: bold;
+     font-family: "Playwrite DE Grund";
+     margin-top: 30px;
+}
+.pro-title{
+    color: white;
+    font-weight: bold;
+    font-family: "Playwrite DE Grund";
+    text-shadow: 2px 1px 3px black;
+}
+.pro-img{
+    height: 300px;
+    width: auto;
+}
+.pro-button-panel{
+    height: 200px;
+}
+
+.pro-button{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.price-label{
+    font-weight: bold;
+    font-size: 20px;
+    font-family: "Playwrite DE Grund";
+    padding-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.search-head{
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "Playwrite DE Grund";
+    text-align: center;
+    margin-bottom: 20px;
+}
+.footer-title-word{
+    font-weight: bold;
+    font-family: "Lilita One";
+    font-size: 40px;
+
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -113,5 +229,8 @@ body {
         background-position: bottom;
         align-items: start;
         
+    }
+    .search-head{
+        font-size: 20px;
     }
 }
