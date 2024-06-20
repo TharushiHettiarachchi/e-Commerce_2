@@ -6,11 +6,12 @@
     --main-trans-color: rgba(33, 33, 92, 0.712);
 }
 
-body{
+body {
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
 }
+
 .body1 {
     margin: 0;
     padding: 0;
@@ -85,47 +86,53 @@ body{
     border-color: var(--main-color);
 }
 
-.login-link{
+.login-link {
     cursor: pointer;
 }
-.navbar-background{
-    background-color: #80cbc4 ;
+
+.navbar-background {
+    background-color: #80cbc4;
     padding-left: 10px;
 }
-.nav-title-word{
+
+.nav-title-word {
     font-size: 22px;
     font-weight: bold;
     padding-left: 20px;
     padding-right: 20px;
-   
+
 }
-.side-box{
+
+.side-box {
     display: flex;
     align-items: center;
     /* justify-content: center; */
     flex-direction: column;
 }
-.prof-img-side{
+
+.prof-img-side {
     height: 100px;
     width: 100px;
     margin-top: 100px;
-    
+
     box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.363);
     border-radius: 100%;
 }
-.side-span1{
+
+.side-span1 {
     padding-top: 10px;
     font-size: 18px;
-font-weight: bold;
+    font-weight: bold;
 }
 
-.side-span2{
+.side-span2 {
     font-size: 14px;
     padding-bottom: 10px;
     margin-bottom: 20px;
 
 }
-.side-button1{
+
+.side-button1 {
     width: 90%;
     margin-top: 10px;
     margin-bottom: 5px;
@@ -133,43 +140,49 @@ font-weight: bold;
     align-items: start;
     justify-content: start;
 }
-.slider-background{
-    
+
+.slider-background {
+
     width: 82vw;
 }
-.advanced-s:hover{
+
+.advanced-s:hover {
     font-weight: bold;
     cursor: pointer;
     transition-duration: 0.8s;
 }
-.category-title{
+
+.category-title {
     font-size: 34px;
     font-weight: bold;
-     font-family: "Playwrite DE Grund";
-     margin-top: 30px;
+    font-family: "Playwrite DE Grund";
+    margin-top: 30px;
 }
-.pro-title{
+
+.pro-title {
     color: white;
     font-weight: bold;
     font-family: "Playwrite DE Grund";
     text-shadow: 2px 1px 3px black;
 }
-.pro-img{
+
+.pro-img {
     height: 300px;
     width: auto;
 }
-.pro-button-panel{
+
+.pro-button-panel {
     height: 200px;
 }
 
-.pro-button{
+.pro-button {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.price-label{
+.price-label {
     font-weight: bold;
     font-size: 20px;
     font-family: "Playwrite DE Grund";
@@ -177,18 +190,119 @@ font-weight: bold;
     padding-bottom: 10px;
     text-align: center;
 }
-.search-head{
+
+.search-head {
     font-size: 30px;
     font-weight: bold;
     font-family: "Playwrite DE Grund";
     text-align: center;
     margin-bottom: 20px;
 }
-.footer-title-word{
+
+.footer-title-word {
     font-weight: bold;
     font-family: "Lilita One";
     font-size: 40px;
 
+}
+
+.cart-div {
+    height: 90vh;
+
+}
+
+.cart-body {
+   overflow-x: hidden;
+}
+.cart-title{
+    font-family: "Playwrite DE Grund";
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.cart-pro {
+    height: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.288);
+}
+
+.cart-pro-img {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-pro-name {
+    height: 100px;
+    font-family: "Playwrite DE Grund";
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+
+}
+
+.cart-pro-qty {
+    height: 100px;
+    /* flex-direction: column; */
+    display: flex;
+     align-items: center;
+    justify-content: center;
+    font-family: "Playwrite DE Grund";
+}
+
+.cart-pro-price {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Playwrite DE Grund";
+}
+
+
+.cart-pro-edit {
+    height: 100px;
+   
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+}
+.pro-img-cart{
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.fixed-action-btn {
+    position: absolute;
+}
+.summary-title{
+    font-family: "Playwrite DE Grund";
+    text-align: center;
+    font-weight: bold;
+    font-size: 26px;
+    margin-top: 30px;
+}
+
+.summary-price{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    font-family: "Playwrite DE Grund";
+}
+.summary-name{
+    font-family: "Playwrite DE Grund";
+}
+
+.cart-button1{
+    margin-top: 20px;
+    width: 100%;
 }
 
 
@@ -212,13 +326,14 @@ font-weight: bold;
         width: 90vw;
         height: auto;
         margin-top: 50px;
-        
+
     }
+
     .login-box1 {
         width: 90vw;
         height: auto;
         margin-top: 50px;
-        
+
     }
 
     .login-input-box {
@@ -228,9 +343,35 @@ font-weight: bold;
     .login-background {
         background-position: bottom;
         align-items: start;
-        
+
     }
-    .search-head{
+
+    .search-head {
         font-size: 20px;
     }
+
+    .cart-pro {
+        height: auto;
+    }
+    .cart-body{
+        overflow: scroll;
+    }
+    .cart-div{
+        height: auto;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
