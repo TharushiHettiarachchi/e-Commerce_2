@@ -305,11 +305,39 @@ body {
     width: 100%;
 }
 
+.product-info-title{
+    font-family: "Playwrite DE Grund";
+}
+
+.product-info-img{
+    height: 50vh;
+    margin-top: 20px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.product-info-detail{
+    height: 50vh;
+    margin-top: 20px;
+    /* display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column; */
+}
+
+.product-info{
+    font-family: "Playwrite DE Grund";
+}
 
 
-
-
-
+.product-info1{
+    font-family: "Playwrite DE Grund";
+    font-weight: bold;
+}
+.pro-info-btn{
+    width: 90%;
+    margin-top: 20px;
+}
 
 
 

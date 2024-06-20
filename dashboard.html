@@ -94,7 +94,7 @@
             <hr />
         </div>
         <div class="col s12 m4 l3">
-            <div class="card">
+            <div class="card modal-trigger" href="#modal1">
                 <div class="card-image">
                     <img src="Resources/product1.jpg" class="pro-img">
                     <span class="card-title pro-title">Rye Bread</span>
@@ -314,6 +314,54 @@
     </footer>
     </div>
 
+
+<!-- Modal Trigger -->
+<!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal" style="width: 80vw; height: 80vh; overflow: hidden;">
+  <div class="modal-content">
+    <h4 class="product-info-title">Rye Bread</h4>
+   <div class="row">
+    <div class="col s6 product-info-img" style="background-image: url('Resources/product1.jpg');"></div>
+    <div class="col s6 product-info-detail">
+        <div class="row">
+            <div class="col s4 product-info">Product Name  :</div>
+            <div class="col s8 product-info">Rye Bread</div>
+        </div>
+        <div class="row">
+            <div class="col s4 product-info">Product Description  :</div>
+            <div class="col s8 product-info">Rye bread is a dense, flavorful bread made from rye flour. It has a dark color, robust taste, and chewy texture. Often featuring a tangy flavor from a sourdough starter, it may include caraway seeds for extra flavor. Popular in European cuisines, it's rich in fiber and perfect for hearty sandwiches.</div>
+        </div>
+        <div class="row" style="display: flex; align-items: baseline;">
+            <div class="col s4 product-info valign-wrapper">Quantity  :</div>
+            <div class="col s8 product-info"><input type="number" value="1"/></div>
+        </div>
+        <div class="row">
+            <div class="col s4 product-info">Product Price  :</div>
+            <div class="col s8 product-info1">Rs. 1000.00</div>
+        </div>
+        <div class="row" style="display: flex; align-items: center; flex-direction: column;">
+            <a class="waves-effect waves-light btn pro-info-btn teal lighten-1" >Add to cart</a>
+            <a class="waves-effect waves-light btn pro-info-btn teal darken-1" >Add to Wishlist</a>
+            <a class="waves-effect waves-light btn pro-info-btn teal darken-3" >Buy Now</a>
+
+        </div>
+    </div>
+   </div>
+    
+  </div>
+
+
+
+
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-green btn-flat">CLOSE</a>
+  </div>
+</div>
+
+
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var elems = document.querySelectorAll('.sidenav');
@@ -335,6 +383,12 @@
                 instances.forEach(instance => instance.next());
             }, 5000); // Change slide every 5000 milliseconds (5 seconds)
         });
+
+        document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems, {});
+  });
+
     </script>
     <script src="script.js"></script>
 </body>
