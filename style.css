@@ -212,14 +212,16 @@ body {
 }
 
 .cart-body {
-   overflow-x: hidden;
+    overflow-x: hidden;
 }
-.cart-title{
+
+.cart-title {
     font-family: "Playwrite DE Grund";
     font-size: 40px;
     font-weight: bold;
     margin-bottom: 10px;
 }
+
 .cart-pro {
     height: 100px;
     margin-top: 10px;
@@ -248,7 +250,7 @@ body {
     height: 100px;
     /* flex-direction: column; */
     display: flex;
-     align-items: center;
+    align-items: center;
     justify-content: center;
     font-family: "Playwrite DE Grund";
 }
@@ -264,13 +266,14 @@ body {
 
 .cart-pro-edit {
     height: 100px;
-   
+
     display: flex;
     align-items: center;
     justify-content: flex-end;
     position: relative;
 }
-.pro-img-cart{
+
+.pro-img-cart {
     height: 70px;
     width: 70px;
     border-radius: 100%;
@@ -282,7 +285,8 @@ body {
 .fixed-action-btn {
     position: absolute;
 }
-.summary-title{
+
+.summary-title {
     font-family: "Playwrite DE Grund";
     text-align: center;
     font-weight: bold;
@@ -290,33 +294,35 @@ body {
     margin-top: 30px;
 }
 
-.summary-price{
+.summary-price {
     display: flex;
     align-items: center;
     justify-content: end;
     font-family: "Playwrite DE Grund";
 }
-.summary-name{
+
+.summary-name {
     font-family: "Playwrite DE Grund";
 }
 
-.cart-button1{
+.cart-button1 {
     margin-top: 20px;
     width: 100%;
 }
 
-.product-info-title{
+.product-info-title {
     font-family: "Playwrite DE Grund";
 }
 
-.product-info-img{
+.product-info-img {
     height: 50vh;
     margin-top: 20px;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
 }
-.product-info-detail{
+
+.product-info-detail {
     height: 50vh;
     margin-top: 20px;
     /* display: flex;
@@ -325,18 +331,25 @@ justify-content: center;
 flex-direction: column; */
 }
 
-.product-info{
+.product-info {
     font-family: "Playwrite DE Grund";
 }
 
 
-.product-info1{
+.product-info1 {
     font-family: "Playwrite DE Grund";
     font-weight: bold;
 }
-.pro-info-btn{
+
+.pro-info-btn {
     width: 90%;
     margin-top: 20px;
+}
+
+.pro-mod {
+    width: 80vw;
+    height: 80vh;
+    overflow: hidden;
 }
 
 
@@ -381,20 +394,30 @@ flex-direction: column; */
     .cart-pro {
         height: auto;
     }
-    .cart-body{
+
+    .cart-body {
         overflow: scroll;
     }
-    .cart-div{
+
+    .cart-div {
         height: auto;
     }
 
+    .pro-mod {
+        overflow: scroll;
+       height: auto;
+        width: 100vw;
 
+    }
 
-
-
-
-
-
+    .pro-info-btn {
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    
+.product-info-detail{
+    height: auto;
+}
 
 
 

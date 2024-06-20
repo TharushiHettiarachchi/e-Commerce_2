@@ -41,7 +41,8 @@
             <img class="prof-img-side" src="Resources/prof1.jpg" alt="" />
             <span class="teal-text darken-2-text side-span1">Tharushi Hettiarachchi</span>
             <span class="grey-text lighten-1-text side-span2">tharushihettiarachchi12@gmail.com</span>
-            <a class="waves-effect waves-light btn-small side-button1" onclick="window.location = 'dashboard.html';"><i class="material-icons left">home</i>Home</a>
+            <a class="waves-effect waves-light btn-small side-button1" onclick="window.location = 'dashboard.html';"><i
+                    class="material-icons left">home</i>Home</a>
             <a class="waves-effect waves-light btn-small side-button1" onclick="window.location = 'cart.html';"><i
                     class="material-icons left">local_grocery_store</i>Cart</a>
             <a class="waves-effect waves-light btn-small side-button1"><i
@@ -315,50 +316,53 @@
     </div>
 
 
-<!-- Modal Trigger -->
-<!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
+    <!-- Modal Trigger -->
+    <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
 
-<!-- Modal Structure -->
-<div id="modal1" class="modal" style="width: 80vw; height: 80vh; overflow: hidden;">
-  <div class="modal-content">
-    <h4 class="product-info-title">Rye Bread</h4>
-   <div class="row">
-    <div class="col s6 product-info-img" style="background-image: url('Resources/product1.jpg');"></div>
-    <div class="col s6 product-info-detail">
-        <div class="row">
-            <div class="col s4 product-info">Product Name  :</div>
-            <div class="col s8 product-info">Rye Bread</div>
-        </div>
-        <div class="row">
-            <div class="col s4 product-info">Product Description  :</div>
-            <div class="col s8 product-info">Rye bread is a dense, flavorful bread made from rye flour. It has a dark color, robust taste, and chewy texture. Often featuring a tangy flavor from a sourdough starter, it may include caraway seeds for extra flavor. Popular in European cuisines, it's rich in fiber and perfect for hearty sandwiches.</div>
-        </div>
-        <div class="row" style="display: flex; align-items: baseline;">
-            <div class="col s4 product-info valign-wrapper">Quantity  :</div>
-            <div class="col s8 product-info"><input type="number" value="1"/></div>
-        </div>
-        <div class="row">
-            <div class="col s4 product-info">Product Price  :</div>
-            <div class="col s8 product-info1">Rs. 1000.00</div>
-        </div>
-        <div class="row" style="display: flex; align-items: center; flex-direction: column;">
-            <a class="waves-effect waves-light btn pro-info-btn teal lighten-1" >Add to cart</a>
-            <a class="waves-effect waves-light btn pro-info-btn teal darken-1" >Add to Wishlist</a>
-            <a class="waves-effect waves-light btn pro-info-btn teal darken-3" >Buy Now</a>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal pro-mod" >
+        <div class="modal-content pro-mod1">
+            <h4 class="product-info-title">Rye Bread</h4>
+            <div class="row">
+                <div class="col l6 s12 product-info-img" style="background-image: url('Resources/product1.jpg');"></div>
+                <div class="col l6 s12 product-info-detail">
+                    <div class="row">
+                        <div class="col s4 product-info">Product Name :</div>
+                        <div class="col s8 product-info">Rye Bread</div>
+                    </div>
+                    <div class="row">
+                        <div class="col s4 product-info">Product Description :</div>
+                        <div class="col s8 product-info">Rye bread is a dense, flavorful bread made from rye flour. It
+                            has a dark color, robust taste, and chewy texture. Often featuring a tangy flavor from a
+                            sourdough starter, it may include caraway seeds for extra flavor. Popular in European
+                            cuisines, it's rich in fiber and perfect for hearty sandwiches.</div>
+                    </div>
+                    <div class="row" style="display: flex; align-items: baseline;">
+                        <div class="col s4 product-info valign-wrapper">Quantity :</div>
+                        <div class="col s8 product-info"><input type="number" value="1" /></div>
+                    </div>
+                    <div class="row">
+                        <div class="col s4 product-info">Product Price :</div>
+                        <div class="col s8 product-info1">Rs. 1000.00</div>
+                    </div>
+                    <div class="row" style="display: flex; align-items: center; flex-direction: column;">
+                        <a class="waves-effect waves-light btn pro-info-btn teal lighten-1">Add to cart</a>
+                        <a class="waves-effect waves-light btn pro-info-btn teal darken-1">Add to Wishlist</a>
+                        <a class="waves-effect waves-light btn pro-info-btn teal darken-3">Buy Now</a>
 
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer pro-foot">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">CLOSE</a>
+            </div>
         </div>
+
+
+
+
+       
     </div>
-   </div>
-    
-  </div>
-
-
-
-
-  <div class="modal-footer">
-    <a href="#!" class="modal-close waves-effect waves-green btn-flat">CLOSE</a>
-  </div>
-</div>
 
 
 
@@ -384,10 +388,10 @@
             }, 5000); // Change slide every 5000 milliseconds (5 seconds)
         });
 
-        document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.modal');
-    var instances = M.Modal.init(elems, {});
-  });
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(elems, {});
+        });
 
     </script>
     <script src="script.js"></script>
