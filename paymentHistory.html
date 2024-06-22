@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="icon" href="Resources/icon.png">
-    <title>WebShop - My Products</title>
+    <title>WebShop - Payment History</title>
 </head>
 
 <body>
@@ -47,9 +47,10 @@
                     class="material-icons left">local_grocery_store</i>Cart</a>
             <a class="waves-effect waves-light btn-small side-button1" onclick="window.location = 'favourite.html';"><i
                     class="material-icons left">favorite</i>Wishlist</a>
-            <a class="waves-effect waves-light btn-small side-button1" onclick="window.location = 'myProducts.html';"><i class="material-icons left">local_mall</i>My
+            <a class="waves-effect waves-light btn-small side-button1" onclick="window.location = 'myProducts.html';"><i
+                    class="material-icons left">local_mall</i>My
                 Products</a>
-            <a class="waves-effect waves-light btn-small side-button1"><i class="material-icons left">payment</i>Payment
+            <a class="waves-effect waves-light btn-small side-button1" onclick="window.location = 'paymentHistory.html';"><i class="material-icons left">payment</i>Payment
                 History</a>
             <a class="waves-effect waves-light btn-small side-button1" onclick="window.location = 'profile.html';"><i
                     class="material-icons left">account_circle</i>Profile</a>
@@ -61,65 +62,46 @@
 
     </div>
     <div class="row">
-        <div class="col s12 cart-title">My Products</div>
+        <div class="col s12 cart-title">Payment History</div>
     </div>
     <div class="row">
         <div class="col s12 hide-on-med-and-down">
             <div class="row">
-                <div class="col s1 grey lighten-2 center-align mypro-head">#</div>
-                <div class="col s4 grey lighten-2 center-align mypro-head">Product</div>
+                <div class="col s2 grey lighten-2 center-align mypro-head">#</div>
                 <div class="col s2 grey lighten-2 center-align mypro-head">Date</div>
-                <div class="col s1 grey lighten-2 center-align mypro-head">Quantity</div>
+                <div class="col s2 grey lighten-2 center-align mypro-head">Quantity</div>
+                <div class="col s2 grey lighten-2 center-align mypro-head">Price</div>
                 <div class="col s4 grey lighten-2 center-align mypro-head">Status</div>
             </div>
         </div>
         <div class="col s12 teal lighten-5" style="margin-top: 10px;">
             <div class="row">
-                <div class="col l1 s12 teal lighten-5 center-align mypro-content">102457</div>
-                <div class="col l1 s12 teal lighten-5 center-align mypro-content"><img src="Resources/product6.jpg"
-                        class="mypro-img" /></div>
-                <div class="col l3 s12 teal lighten-5 center-align mypro-content">Cup Cake</div>
-                <div class="col l2 s12 teal lighten-5 center-align mypro-content">2024-06-22</div>
-                <div class="col l1 s12 teal lighten-5 center-align mypro-content">2</div>
-                <div class="col l3 s12 teal lighten-5 center-align mypro-content">
-                    <div class="row"
-                        style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
-                        <div class="mypro-status">Ordered</div>
-                        <div class="mypro-status">Sent to packing</div>
-                        <div class="mypro-status1">Delivering</div>
-                    </div>
-                </div>
-                <div class="col l1 s12 teal lighten-5 center-align mypro-content"></div>
+                <div class="col l1 s12 teal lighten-5 center-align payhis-content"><i
+                        class="material-icons small teal-text">insert_drive_file</i></div>
+                <div class="col l1 s12 teal lighten-5 center-align payhis-content">102457</div>
+                <div class="col l2 s12 teal lighten-5 center-align payhis-content">2024-06-21 21:23:00</div>
+                <div class="col l2 s12 teal lighten-5 center-align payhis-content">3</div>
+                <div class="col l2 s12 teal lighten-5 center-align payhis-content">Rs. 3500.00</div>
+                <div class="col l3 s12 teal lighten-5 center-align payhis-content">Cash</div>
+                <div class="col l1 s12 teal lighten-5 center-align payhis-content"><i
+                        class="material-icons small teal-text">delete</i></div>
             </div>
         </div>
         <div class="col s12 teal lighten-5" style="margin-top: 10px;">
             <div class="row">
-                <div class="col l1 s12 teal lighten-5 center-align mypro-content">102458</div>
-                <div class="col l1 s12 teal lighten-5 center-align mypro-content"><img src="Resources/product1.jpg"
-                        class="mypro-img" /></div>
-                <div class="col l3 s12 teal lighten-5 center-align mypro-content">Rye Bread</div>
-                <div class="col l2 s12 teal lighten-5 center-align mypro-content">2024-06-22</div>
-                <div class="col l1 s12 teal lighten-5 center-align mypro-content">1</div>
-                <div class="col l3 s12 teal lighten-5 center-align mypro-content">
+                <div class="col l1 s12 teal lighten-5 center-align payhis-content"><i
+                        class="material-icons small teal-text">insert_drive_file</i></div>
+                <div class="col l1 s12 teal lighten-5 center-align payhis-content">102457</div>
+                <div class="col l2 s12 teal lighten-5 center-align payhis-content">2024-06-21 21:23:00</div>
+                <div class="col l2 s12 teal lighten-5 center-align payhis-content">3</div>
+                <div class="col l2 s12 teal lighten-5 center-align payhis-content">Rs. 3500.00</div>
+                <div class="col l3 s12 teal lighten-5 center-align payhis-content">Cash</div>
+                <div class="col l1 s12 teal lighten-5 center-align payhis-content"><i
+                        class="material-icons small teal-text">delete</i></div>
+            </div>
+        </div>
 
-                    <a class="waves-effect waves-light btn-small teal lighten-2" style="margin-left: 10px; margin-right: 10px; width: 200px;">Add Feedback </a>
-                              
-                </div>
-                <div class="col l1 s12 teal lighten-5 center-align mypro-content"><i class="material-icons small teal-text" >delete</i></a></div>
-            </div>
-        </div>
-        <div class="col s12 teal lighten-5" style="margin-top: 10px;">
-            <div class="row">
-                <div class="col l1 s12 teal lighten-5 center-align mypro-content">102459</div>
-                <div class="col l1 s12 teal lighten-5 center-align mypro-content"><img src="Resources/product5.jpg"
-                        class="mypro-img" /></div>
-                <div class="col l3 s12 teal lighten-5 center-align mypro-content">Fruit Cake</div>
-                <div class="col l2 s12 teal lighten-5 center-align mypro-content">2024-06-22</div>
-                <div class="col l1 s12 teal lighten-5 center-align mypro-content">2</div>
-                <div class="col l3 s12 teal lighten-5 center-align mypro-content teal-text deliverd-word">Delivered </div>
-                <div class="col l1  s12 teal lighten-5 center-align mypro-content"><i class="material-icons small teal-text" >delete</i></div>
-            </div>
-        </div>
+
     </div>
 
 
