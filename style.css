@@ -352,7 +352,7 @@ flex-direction: column; */
     overflow: hidden;
 }
 
-.profile-profile-img{
+.profile-profile-img {
     height: 400px;
     width: 400px;
     background-position: center;
@@ -362,31 +362,33 @@ flex-direction: column; */
     box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.247);
 }
 
-.prof-name{
+.prof-name {
     font-family: "Playwrite DE Grund";
     font-weight: bold;
     font-size: 30px;
     margin-top: 30px;
 }
 
-.prof-email{
+.prof-email {
     font-family: "Playwrite DE Grund";
     /* font-weight: bold; */
     font-size: 14px;
-    margin-top: 10px; 
+    margin-top: 10px;
 }
 
-.profile-div{
+.profile-div {
     height: 80vh;
     border-radius: 0px 2000px 2000px 0px;
 }
-.prof-form{
+
+.prof-form {
     margin-top: 30px;
     font-family: "Playwrite DE Grund";
     font-size: 18px;
     font-weight: bold;
 }
-.prof-form-head{
+
+.prof-form-head {
     font-size: 20px;
     font-weight: bold;
     display: flex;
@@ -394,7 +396,76 @@ flex-direction: column; */
     letter-spacing: 2px;
 }
 
+.mypro-head {
+    font-family: "Playwrite DE Grund";
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right-style: solid;
+    border-width: 2px;
+    border-color: rgba(0, 0, 0, 0.247);
 
+}
+
+.mypro-content {
+    height: 150px;
+    font-family: "Playwrite DE Grund";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mypro-img {
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+}
+
+.mypro-status {
+    padding: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #009688;
+    margin-top: 8px;
+    width: 200px;
+    color: #009688;
+    border-radius: 0px 10px 0px 10px;
+
+}
+
+.mypro-status1 {
+    padding: 5px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #009688;
+    margin-top: 8px;
+    width: 200px;
+    color: #009688;
+    font-weight: bold;
+    border-radius: 0px 10px 0px 10px;
+    background-color: #00968741;
+
+}
+
+.mypro-status2 {
+    padding: 5px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #009688;
+    margin-top: 8px;
+    width: 200px;
+    color: #009688;
+    font-weight: bold;
+    border-radius: 0px 10px 0px 10px;
+    background-color: #00968727;
+
+}
+
+.deliverd-word {
+    font-weight: bold;
+    font-size: 16px;
+}
 
 
 @media only screen and (max-width: 600px) {
@@ -441,7 +512,7 @@ flex-direction: column; */
 
     .pro-mod {
         overflow: scroll;
-       height: auto;
+        height: auto;
         width: 100vw;
 
     }
@@ -450,11 +521,15 @@ flex-direction: column; */
         margin-bottom: 10px;
         margin-top: 10px;
     }
-    
-.product-info-detail{
-    height: auto;
-}
 
+    .product-info-detail {
+        height: 50px;
+    }
+
+    .mypro-content {
+        height: auto;
+        margin-top: 10px;
+    }
 
 
 
