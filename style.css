@@ -474,6 +474,30 @@ flex-direction: column; */
     font-size: 16px;
 }
 
+.advance-to{
+    margin-top: 30px;
+}
+.advan-result{
+    font-family: "Playwrite DE Grund";
+    font-size: 20px;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media only screen and (max-width: 600px) {
 
@@ -538,7 +562,9 @@ flex-direction: column; */
         margin-top: 10px;
     }
 
-
+.advance-to{
+    margin-top: 0px;
+}
 
 
 
