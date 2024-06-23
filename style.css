@@ -33,6 +33,20 @@ body {
 
 
 }
+.admin-login-background {
+    height: 100vh;
+    overflow: hidden;
+    background-image: url("Resources/admin.jpg");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+
+
+
+}
 
 .login-box {
     height: 500px;
@@ -483,12 +497,76 @@ flex-direction: column; */
     margin-top: 30px;
     font-weight: bold;
 }
+.chat-out{
+    /* border-bottom-style: solid;
+    border-top-style: solid;
+    border-width: 2px; */
+    box-shadow: 0px 0px 3px 1px #0096875d;
+    /* border-color: #009688; */
+}
 
+.admin-dash-box{
+    height: 250px;
+    /* background-image: url(Resources/admin-back.png); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* border-radius: 0px 10px 0px 10px; */
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* margin: 10px; */
+  
+}
+.sell-head{
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: "Playwrite DE Grund";
+    margin-bottom: 20px;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.493);
+}
+.sell-small{
+    color: white;
+    /* font-weight: bold; */
+    font-size: 16px;
+    font-family: "Playwrite DE Grund";
+    margin-bottom: 20px;
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.493);
+}
+.sell-sub{
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: "Playwrite DE Grund";
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.493);
+}
+.sell-pro{
+    /* color: white; */
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 26px;
+    font-family: "Playwrite DE Grund";
+    text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.493);
+}
+.admin-dash-most{
+   height: 500px; 
+   border-radius: 30px;
+   box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.253);
+}
 
+.admin-dash-pro{
+    margin-top: 20px;
+    height: 200px;
+    width: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 100%;
 
-
-
-
+}
 
 
 

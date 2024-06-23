@@ -32,17 +32,18 @@ function signIn() {
 
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems, options);
-  });
+function admin1() {
+    var signIn = document.getElementById("adminlogin1");
+    var signUp = document.getElementById("adminlogin2");
 
-  // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
-  // var collapsibleElem = document.querySelector('.collapsible');
-  // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
+    
+        signUp.style.display = "block";
+        signUp.style.display = "flex";
+        signIn.style.display = "none"
+   
 
-  // Or with jQuery
+}
 
-  $(document).ready(function(){
-    $('.sidenav').sidenav();
-  });
+
+
+
