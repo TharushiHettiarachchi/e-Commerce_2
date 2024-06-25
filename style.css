@@ -600,21 +600,57 @@ flex-direction: column; */
       border-color: #009688;
 }
 
+.pro-ad{
+    height: 85vh;
+}
 
+.ad-pro-img{
+    height: 400px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
+.ad-pro-h1{
+    font-weight: bold;
+    font-family: "Playwrite DE Grund";
+    padding-left: 10px;
+    margin-top: 10px;
+}
 
+.ad-pro-h2{
+    font-family: "Playwrite DE Grund";
+    padding-left: 10px;
+    margin-top: 10px; 
+}
+.ad-pro-analytic{
+    font-weight: bold;
+    font-family: "Playwrite DE Grund";
+    margin-top: 20px;
+    margin-left: 10px;
+    font-size: 18px;
+}
 
+.feedback-name{
+    font-weight: bold;
+    font-family: "Playwrite DE Grund";
+}
 
+.feedback-ad{
+    padding: 10px;
+    border-radius: 20px 0px 20px 0px;
+}
 
+.feedback-msg{
+    font-family: "Playwrite DE Grund";
+}
 
-
-
-
-
-
-
-
-
+.admin-pro-div{
+    padding: 10px;
+}
+.admin-pro-div1{
+    padding: 10px;
+}
 
 
 
@@ -698,6 +734,28 @@ flex-direction: column; */
     border-radius: 0px;
     margin-bottom: 20px;
 }
+.admin-pro-div{
+    padding: 0px;
+}
+.admin-pro-div1{
+    padding: 2px;
+}
+.pro-ad{
+    height: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
