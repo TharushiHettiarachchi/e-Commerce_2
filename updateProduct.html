@@ -81,106 +81,52 @@
 
     </div>
 
-
-    <div class="row" style="padding: 8px; padding-top: 0px; padding-bottom: 10px;">
-
-        <div class="col l9 s12 cart-div" style="padding-right: 20px;">
+    <div class="row">
+        <div class="col l6 s12 offset-l3 teal lighten-5 addpro">
             <div class="row">
-                <div class="col s12 cart-title">Manage Products</div>
-            </div>
-            <div class="row">
-                <div class="col s12 l3" onclick="window.location='adminProductView.html';">
-                    <div class="card" style="padding-bottom: 10px;">
-                        <div class="card-image">
-                            <img src="Resources/product1.jpg" class="pro-img">
-                            <span class="card-title pro-title">Rye Bread</span>
-                        </div>
-                        <div class="card-content">
-                            <p class="price-label" style="padding-bottom: 30px;">Rs. 1000.00</p>
-
-                        </div>
-
-                    </div>
+                <div class="col s12 cart-title center-align" style="margin-top: 20px; margin-bottom: 10px;">Update Product
                 </div>
-                <div class="col s12 l3">
-                    <div class="card" style="padding-bottom: 10px;">
-                        <div class="card-image">
-                            <img src="Resources/product6.jpg" class="pro-img">
-                            <span class="card-title pro-title">Cup Cake</span>
-                        </div>
-                        <div class="card-content">
-                            <p class="price-label" style="padding-bottom: 30px;">Rs. 1000.00</p>
-
-                        </div>
-
-                    </div>
+                <div class="col l8 s10 offset-l2 offset-s1 teal lighten-5 load-img" style="background-image: url(Resources/product1.jpg);"></div>
+                <div class="col s12 " style="padding-top: 20px; padding-bottom: 30px;">
+                    <input type="file" id="file-uploader" style="display: none;" />
+                    <label for="file-uploader" class="waves-effect waves-light btn-small col l8 s10 offset-l2 offset-s1">Update
+                        Product Image</label>
                 </div>
-                <div class="col s12 l3">
-                    <div class="card" style="padding-bottom: 10px;">
-                        <div class="card-image">
-                            <img src="Resources/product3.jpg" class="pro-img">
-                            <span class="card-title pro-title">Pita Bread</span>
-                        </div>
-                        <div class="card-content">
-                            <p class="price-label" style="padding-bottom: 30px;">Rs. 1000.00</p>
-
-                        </div>
-
-                    </div>
+                <div class="input-field col l8 s10 offset-l2 offset-s1">
+                    <input id="pro-name" type="text" value="Rye Bread" class="validate font-design">
+                    <label for="pro-name">Product Name</label>
                 </div>
-                <div class="col s12 l3">
-                    <div class="card" style="padding-bottom: 10px;">
-                        <div class="card-image">
-                            <img src="Resources/product5.jpg" class="pro-img">
-                            <span class="card-title pro-title">Fruit Cake</span>
-                        </div>
-                        <div class="card-content">
-                            <p class="price-label" style="padding-bottom: 30px;">Rs. 1000.00</p>
-
-                        </div>
-
-                    </div>
+                <div class="input-field col l8 s10 offset-l2 offset-s1 font-design">
+                    <select class="font-design">
+                      <option value="" disabled selected>Select</option>
+                      <option value="1" class="font-design" selected>Breads</option>
+                      <option value="2">Cakes</option>
+                      <option value="3">Short Eats</option>
+                    </select>
+                    <label>Product Category</label>
+                  </div>
+                
+                <div class="input-field col l8 s10 offset-l2 offset-s1">
+                    <input id="pro-name" value="Rs. 1000.00" type="text" class="validate font-design">
+                    <label for="pro-name">Product Price</label>
                 </div>
-            </div>
-        </div>
-        <div class="col l3 s12 teal lighten-4 cart-div" style="padding: 20px;">
-            <div class="row">
-                <div class="col s12 summary-title" style="margin-bottom: 20px;">Sort By</div>
-            </div>
-            <div class="input-field col s12">
-                <input id="search" type="text" class="validate">
-                <label for="search">Search</label>
-            </div>
-            <div class="input-field col s12">
-                <select>
-                  <option value="" disabled selected>Select by Category</option>
-                  <option value="1">Breads</option>
-                  <option value="2">Cakes</option>
-                  <option value="3">Short Eats</option>
-                </select>
-                <label>Materialize Select</label>
-              </div>
-              <div class="col s12">
-                <a class="waves-effect waves-light btn-small cart-button1" style="margin-bottom: 20px;">Search</a>
-            </div>
-            <div class="col s12">
-                <hr style="border-color: #009688 ;" />
-            </div>
-            <div class="row">
+                <div class="row">
+                    <form class="col l8 s10 offset-l2 offset-s1">
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <textarea id="textarea1" class="materialize-textarea font-design">Rye bread is a dense, flavorful bread made from rye flour.It has a dark color, robust taste, and chewy texture. Often featuring a tangy flavor from a sourdough starter, it may include caraway seeds for extra flavor. Popular in European cuisines, it's rich in fiber and perfect for hearty sandwiches.</textarea>
+                          <label for="textarea1">Product Description</label>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
                 <div class="col s12">
-                    <a class="waves-effect waves-light btn-small cart-button1" onclick="window.location = 'addProduct.html';">Add Product</a>
+                    <label class="waves-effect waves-light btn-small col l8 s10 offset-l2 offset-s1">Update
+                        Product</label>
                 </div>
-                <!-- <div class="col s12">
-                    <a class="waves-effect waves-light btn-small cart-button1">Remove All</a>
-                </div> -->
             </div>
         </div>
-
     </div>
-
-
-
-
 
 
 
@@ -211,10 +157,10 @@
             var elems = document.querySelectorAll('.modal');
             var instances = M.Modal.init(elems, {});
         });
-        document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('select');
-    var instances = M.FormSelect.init(elems, {});
-  });
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems, {});
+        });
 
 
     </script>
