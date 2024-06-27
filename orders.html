@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="icon" href="Resources/icon.png">
+    <title>WebShop - My Products</title>
+</head>
+
+<body>
+
+    <div class="row">
+        <nav>
+            <div class=" nav-wrapper navbar-background teal-text text-darken-4">
+                <ul id="nav-mobile" class="left" style="cursor: pointer;">
+                    <li data-target="slide-out" class="sidenav-trigger">
+                        <i class="small material-icons">menu</i>
+                    </li>
+                    <li class="nav-title-word">WebShop</li>
+                </ul>
+                <ul id="nav-mobile" class="right hide-on-med-and-down" style="cursor: pointer;">
+                    <li>
+                        <a href="profile.html">
+                            <i class="small material-icons teal-text text-darken-4">account_circle</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="small material-icons teal-text text-darken-4">chat</i>
+                        </a>
+                    </li>
+                    <!-- <li>
+                        <a href="favourite.html">
+                            <i class="small material-icons teal-text text-darken-4">favorite</i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cart.html">
+                            <i class="small material-icons teal-text text-darken-4">local_grocery_store</i>
+                        </a>
+                    </li> -->
+                    <li><a href="index.html">
+                            <i class="small material-icons teal-text text-darken-4">exit_to_app</i>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+        <div id="slide-out" class="sidenav side-box">
+
+            <img class="prof-img-side" src="Resources/prof1.jpg" alt="" />
+            <span class="teal-text darken-2-text side-span1">Tharushi Hettiarachchi</span>
+            <span class="grey-text lighten-1-text side-span2">tharushihettiarachchi12@gmail.com</span>
+            <a class="waves-effect waves-light btn-small side-button1"
+                onclick="window.location = 'adminDashboard.html';">
+                <i class="material-icons left">home</i>Dashboard</a>
+            <a class="waves-effect waves-light btn-small side-button1"
+                onclick="window.location = 'manageProduct.html';"><i
+                    class="material-icons left">local_grocery_store</i>Manage Products</a>
+            <a class="waves-effect waves-light btn-small side-button1" onclick="window.location = 'orders.html';"><i
+                    class="material-icons left">favorite</i>Orders</a>
+            <a class="waves-effect waves-light btn-small side-button1" onclick="window.location = '#.html';"><i
+                    class="material-icons left">local_mall</i>
+                Manage Customers</a>
+            <a class="waves-effect waves-light btn-small side-button1" onclick="window.location = '#.html';"><i
+                    class="material-icons left">payment</i>Payment
+                History</a>
+            <a class="waves-effect waves-light btn-small side-button1" onclick="window.location = 'profile.html';"><i
+                    class="material-icons left">account_circle</i>Profile</a>
+            <a class="waves-effect waves-light btn-small side-button1"><i
+                    class="material-icons left">chat</i>Messages</a>
+            <!-- <a class="waves-effect waves-light btn-small side-button1"
+                onclick="window.location = 'advancedSearch.html';"><i class="material-icons left">search</i>Search</a> -->
+        </div>
+
+
+    </div>
+    <div class="row">
+        <div class="col s12 cart-title">Orders</div>
+    </div>
+    <div class="row">
+        <div class="col s12 hide-on-med-and-down">
+            <div class="row">
+                <div class="col s1 grey lighten-2 center-align mypro-head">#</div>
+                <div class="col s4 grey lighten-2 center-align mypro-head">Product</div>
+                <div class="col s2 grey lighten-2 center-align mypro-head">Date</div>
+                <div class="col s1 grey lighten-2 center-align mypro-head">Quantity</div>
+                <div class="col s4 grey lighten-2 center-align mypro-head">Status</div>
+            </div>
+        </div>
+        <div class="col s12 teal lighten-5" style="margin-top: 10px;">
+            <div class="row">
+                <div class="col l1 s12 teal lighten-5 center-align mypro-content">102457</div>
+                <div class="col l1 s12 teal lighten-5 center-align mypro-content"><img src="Resources/product6.jpg"
+                        class="mypro-img" /></div>
+                <div class="col l3 s12 teal lighten-5 center-align mypro-content">Cup Cake</div>
+                <div class="col l2 s12 teal lighten-5 center-align mypro-content">2024-06-22</div>
+                <div class="col l1 s12 teal lighten-5 center-align mypro-content">2</div>
+                <div class="col l3 s12 teal lighten-5 center-align mypro-content">
+                    <div class="row"
+                        style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+                        <!-- <div class="mypro-status">Ordered</div> -->
+                        <div class="mypro-status">Send to packing</div>
+                        <!-- <div class="mypro-status1">Delivering</div> -->
+                    </div>
+                </div>
+                <div class="col l1 s12 teal lighten-5 center-align mypro-content"></div>
+            </div>
+        </div>
+        <div class="col s12 teal lighten-5" style="margin-top: 10px;">
+            <div class="row">
+                <div class="col l1 s12 teal lighten-5 center-align mypro-content">102458</div>
+                <div class="col l1 s12 teal lighten-5 center-align mypro-content"><img src="Resources/product1.jpg"
+                        class="mypro-img" /></div>
+                <div class="col l3 s12 teal lighten-5 center-align mypro-content">Rye Bread</div>
+                <div class="col l2 s12 teal lighten-5 center-align mypro-content">2024-06-22</div>
+                <div class="col l1 s12 teal lighten-5 center-align mypro-content">1</div>
+                <div class="col l3 s12 teal lighten-5 center-align mypro-content">
+
+                    <i class="large material-icons teal-text">done</i>
+                              
+                </div>
+                <div class="col l1 s12 teal lighten-5 center-align mypro-content"><i class="material-icons small teal-text" >delete</i></a></div>
+            </div>
+        </div>
+        
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems, {});
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.collapsible');
+            var instances = M.Collapsible.init(elems, {});
+        });
+
+
+
+
+    </script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
