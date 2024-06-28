@@ -6,7 +6,7 @@
     <title>WebShop - Cart</title>
 </head>
 
-<body class="cart-body">
+<body class="cart-body" onload="getProductTotal();">
     <?php include "header.php"; ?>
     <div class="row" style="padding: 8px; padding-top: 0px; padding-bottom: 10px;">
 
@@ -36,7 +36,7 @@
                                     <input type="number" id="qty<?php echo ($product_data["id"]); ?>" style="width: 100px;" value="<?php echo ($cart_data["quantity"]); ?>" min="1" onchange="changeQty(<?php echo ($product_data['id']); ?>);" />
                                 </div>
                             </div>
-                            <div class="col l3 s4 cart-pro-price">Rs. <?php echo ($product_data["price"]); ?>.00</div>
+                            <div class="col l3 s4 cart-pro-price">Rs. <?php echo (" ".$product_data["price"]); ?>.00</div>
                             <div class="col l1 s4 offset-l2 cart-pro-edit">
                                 <div class="row">
                                     <div class="fixed-action-btn">
@@ -44,10 +44,10 @@
                                             <i class="large material-icons">mode_edit</i>
                                         </a>
                                         <ul>
-                                            <li><a class="btn-floating teal lighten-3"><i class="material-icons">delete</i></a>
+                                            <li><a class="btn-floating teal lighten-3"><i class="material-icons" onclick="deleteFromCart(<?php echo ($product_data['id']); ?>);">delete</i></a>
                                             </li>
                                             <li><a class="btn-floating teal lighten-1"><i class="material-icons">favorite</i></a></li>
-                                            <li><a class="btn-floating teal darken-1"><i class="material-icons">local_grocery_store</i></a></li>
+                                            <!-- <li><a class="btn-floating teal darken-1"><i class="material-icons">local_grocery_store</i></a></li> -->
                                             <li><a class="btn-floating teal darken-3"><i class="material-icons">payment</i></a>
                                             </li>
                                         </ul>
@@ -95,7 +95,7 @@
                 <div class="col s12" style="margin-top: 10px;">
                     <div class="row">
                         <div class="col s6 summary-name">Total</div>
-                        <div class="col s6 summary-price">Rs. 2000.00</div>
+                        <div class="col s6 summary-price" id="totalPrice">Rs. 2000.00</div>
                     </div>
                 </div>
             </div>
@@ -112,36 +112,7 @@
         </div>
 
     </div>
-    <footer class="page-footer teal lighten-2">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text footer-title-word">WebShop</h5>
-                    <p class="grey-text text-lighten-4">"Creating delightful and innovative bakery products that bring
-                        joy and quality to every bite."</p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Explore</h5>
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Products</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Search</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container center-align">
-                © All copyRights Reserved | Developed by <b>WebStudio</b>
-
-            </div>
-        </div>
-    </footer>
-    <script>
-
-
-    </script>
+   
     <?php include "bottom.php"; ?>
 </body>
 

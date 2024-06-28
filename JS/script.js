@@ -17,7 +17,6 @@ function signUp() {
 
 }
 
-
 function signIn() {
     var signIn = document.getElementById("signUp");
     var signUp = document.getElementById("signIn");
@@ -128,7 +127,6 @@ function searchProduct() {
 
 }
 
-
 function addToCart(id) {
 
     var product_id = id;
@@ -157,7 +155,6 @@ function addToCart(id) {
     request.open("GET", "addToCartProcess.php?id=" + product_id, true);
     request.send();
 }
-
 
 function addToFavourite(id) {
 
@@ -189,7 +186,7 @@ function addToFavourite(id) {
 }
 
 
-//--------------------------------------------- Cart-------------------------------------
+//---------------------------------------------------------------- Cart-------------------------------------
 
 function changeQty(id) {
     var qty = document.getElementById("qty" + id).value;
@@ -206,19 +203,18 @@ function changeQty(id) {
 
             if (response == "Out of Stock") {
                 M.toast({ html: response, classes: 'error' })
+                loadProductTotal(id);
             }
             if (response == "Maximum available qunatity reached") {
                 M.toast({ html: response, classes: 'error' })
-                setTimeout(function () {
-                    window.location.reload();
-                }, 2000);
+                loadProductTotal(id);
+               
             }else if (response == "Minimum Qunatity Reached") {
                 M.toast({ html: response, classes: 'error' })
-                setTimeout(function () {
-                    window.location.reload();
-                }, 2000);
+                loadProductTotal(id);
+               
             } else {
-                // window.location.reload();
+               
                 loadProductTotal(id);
             }
 
@@ -238,7 +234,7 @@ function loadProductTotal(id) {
         if (request.status == 200 & request.readyState == 4) {
             var response = request.responseText;
             productTotal.innerHTML = "Rs. " + response + ".00";
-
+            getProductTotal();
 
         }
 
@@ -247,8 +243,25 @@ function loadProductTotal(id) {
     request.send();
 }
 
+function getProductTotal(){
+    var totalPrice = document.getElementById("totalPrice");
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.status == 200 & request.readyState == 4) {
+            var response = request.responseText;
+            totalPrice.innerHTML = "Rs. " + response + ".00";
 
 
+        }
+
+    }
+    request.open("GET", "getProductTotal.php", true);
+    request.send();
+}
+
+function deleteFromCart(){
+    
+}
 
 
 
