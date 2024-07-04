@@ -1,5 +1,5 @@
 
-// ----------------------------------------------------------------------SignIn & SignUp--------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------SignIn & SignUp------------------------------------------------------------------------------------------------
 
 function signUp() {
     var signIn = document.getElementById("signUp");
@@ -100,7 +100,7 @@ function signInProcess() {
 }
 
 
-// ---------------------------------------------------------- Dashboard ---------------------------------------------------
+// -------------------------------------------------------------------------- Dashboard -------------------------------------------------------------------------------------------------
 
 function searchProduct() {
 
@@ -138,8 +138,10 @@ function addToCart(id) {
 
             if (response == "Successfully added") {
                 M.toast({ html: response, classes: 'success' })
+                // cart_button.classList = "light-green-text"
                 cart_button.innerHTML = "<i class='material-icons' style='margin-right: 5px;'>local_grocery_store</i>Added to Cart";
                 cart_button.disabled = true;
+
                 setTimeout(function () {
                     window.location.reload();
                 }, 2000);
@@ -186,7 +188,7 @@ function addToFavourite(id) {
 }
 
 
-//---------------------------------------------------------------- Cart-------------------------------------
+//-------------------------------------------------------------------------------Cart----------------------------------------------------------------------------------------------------
 
 function changeQty(id) {
     var qty = document.getElementById("qty" + id).value;
@@ -208,13 +210,13 @@ function changeQty(id) {
             if (response == "Maximum available qunatity reached") {
                 M.toast({ html: response, classes: 'error' })
                 loadProductTotal(id);
-               
-            }else if (response == "Minimum Qunatity Reached") {
+
+            } else if (response == "Minimum Qunatity Reached") {
                 M.toast({ html: response, classes: 'error' })
                 loadProductTotal(id);
-               
+
             } else {
-               
+
                 loadProductTotal(id);
             }
 
@@ -227,7 +229,7 @@ function changeQty(id) {
 }
 
 function loadProductTotal(id) {
-    var productTotal = document.getElementById("productTotal"+id);
+    var productTotal = document.getElementById("productTotal" + id);
 
     var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
@@ -243,7 +245,7 @@ function loadProductTotal(id) {
     request.send();
 }
 
-function getProductTotal(){
+function getProductTotal() {
     var totalPrice = document.getElementById("totalPrice");
     var request = new XMLHttpRequest();
     request.onreadystatechange = function () {
@@ -259,9 +261,207 @@ function getProductTotal(){
     request.send();
 }
 
-function deleteFromCart(){
-    
+function deleteFromCart(id) {
+    var product_id = id;
+
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.status == 200 & request.readyState == 4) {
+            var response = request.responseText;
+            if (response == "Successfully Removed") {
+                M.toast({ html: response, classes: 'success' })
+                setTimeout(function () {
+                    window.location.reload();
+                }, 2000);
+            } else {
+                M.toast({ html: 'Something went wrong', classes: 'error' })
+            }
+
+
+        }
+
+    }
+    request.open("GET", "deleteCartProductProcess.php?id=" + product_id, true);
+    request.send();
 }
+
+function cartRemoveAll() {
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.status == 200 & request.readyState == 4) {
+            var response = request.responseText;
+            if (response == "Successfully Removed") {
+                M.toast({ html: response, classes: 'success' })
+                setTimeout(function () {
+                    window.location.reload();
+                }, 2000);
+            } else {
+                M.toast({ html: 'Something went wrong', classes: 'error' })
+            }
+
+
+        }
+
+    }
+    request.open("GET", "deleteAllFromCart.php", true);
+    request.send();
+}
+
+function addToFavouriteFromCart(id) {
+
+    var product_id = id;
+    var fav_button = document.getElementById("favouriteButton" + id);
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.status == 200 & request.readyState == 4) {
+            var response = request.responseText;
+
+            if (response == "Successfully added") {
+                M.toast({ html: response, classes: 'success' })
+               fav_button.classList = "btn-floating light-green lighten-1";
+                fav_button.disabled = true;
+                setTimeout(function () {
+                    window.location.reload();
+                }, 2000);
+
+            } else {
+                M.toast({ html: response, classes: 'error' })
+            }
+
+
+        }
+
+    }
+    request.open("GET", "addToFavouriteProcess.php?id=" + product_id, true);
+    request.send();
+}
+
+
+// -----------------------------------------------------------------------------Favourite------------------------------------------------------------------------------------------------
+
+function addToCartFromFavourite(id) {
+    var product_id = id;
+    var cart_button = document.getElementById("cartButton" + id);
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.status == 200 & request.readyState == 4) {
+            var response = request.responseText;
+
+            if (response == "Successfully added") {
+                M.toast({ html: response, classes: 'success' })
+            
+                setTimeout(function () {
+                    window.location.reload();
+                }, 2000);
+
+            } else {
+                M.toast({ html: response, classes: 'error' })
+                setTimeout(function () {
+                    window.location.reload();
+                }, 2000);
+            }
+
+
+        }
+
+    }
+    request.open("GET", "addToCartProcess.php?id=" + product_id, true);
+    request.send();
+}
+
+function deleteFromFavourite(id) {
+    var product_id = id;
+
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.status == 200 & request.readyState == 4) {
+            var response = request.responseText;
+            if (response == "Successfully Removed") {
+                M.toast({ html: response, classes: 'success' })
+                setTimeout(function () {
+                    window.location.reload();
+                }, 2000);
+            } else {
+                M.toast({ html: 'Something went wrong', classes: 'error' })
+            }
+
+
+        }
+
+    }
+    request.open("GET", "deleteFavouriteProductProcess.php?id=" + product_id, true);
+    request.send();
+}
+
+function FavouriteRemoveAll() {
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.status == 200 & request.readyState == 4) {
+            var response = request.responseText;
+            if (response == "Successfully Removed") {
+                M.toast({ html: response, classes: 'success' })
+                setTimeout(function () {
+                    window.location.reload();
+                }, 2000);
+            } else {
+                M.toast({ html: 'Something went wrong', classes: 'error' })
+            }
+
+
+        }
+
+    }
+    request.open("GET", "deleteAllFromFavourite.php", true);
+    request.send();
+}
+
+
+// Profile-------------------------------------------------------------------------------
+
+function saveProfile(){
+var fname = document.getElementById("first_name");
+var lname = document.getElementById("last_name");
+var email = document.getElementById("email");
+var gender = document.getElementById("gender");
+var password = document.getElementById("password");
+var line1 = document.getElementById("line1");
+var line2 = document.getElementById("line2");
+var city = document.getElementById("city");
+
+var form = new FormData();
+    form.append("fname", fname.value);
+    form.append("lname", lname.value);
+    form.append("email", email.value);
+    form.append("gender", gender.value);
+    form.append("password", password.value);
+    form.append("line1", line1.value);
+    form.append("line2", line2.value);
+    form.append("city", city.value);
+
+  
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.status == 200 & request.readyState == 4) {
+            var response = request.responseText;
+            if (response == "Successfully Updated") {
+                M.toast({ html: response, classes: 'success' })
+            
+
+            } else {
+                M.toast({ html: response, classes: 'error' })
+            }
+          
+
+
+        }
+
+    }
+    request.open("POST", "updateProfile.php", true);
+    request.send(form);
+
+
+}
+
 
 
 

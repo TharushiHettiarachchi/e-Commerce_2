@@ -2,19 +2,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <link rel="icon" href="Resources/icon.png">
+    <?php include "top.php"; ?>
     <title>WebShop - Favourite</title>
 </head>
 
 <body>
 
-<?php include "header.php"; ?>
+    <?php include "header.php"; ?>
 
     <div class="row" style="padding: 8px; padding-top: 0px; padding-bottom: 10px;">
 
@@ -24,88 +18,70 @@
                 <div class="col s12 cart-title">Favourite</div>
 
             </div>
-            <div class="row">
-                <div class="col s12 l3">
-                    <div class="card" style="padding-bottom: 10px;">
-                        <div class="card-image">
-                            <img src="Resources/product1.jpg" class="pro-img">
-                            <span class="card-title pro-title">Rye Bread</span>
-                        </div>
-                        <div class="card-content">
-                            <p class="price-label" style="padding-bottom: 30px;">Rs. 1000.00</p>
-                            <div class="col s12">
-                                <div class="row">
-                                    <div class="col s2 offset-s3"><i class="material-icons teal-text">favorite</i></div>
-                                    <div class="col s2"><i class="material-icons teal-text">local_grocery_store</i>
+            <?php
+            $favourite_rs = Database::search("SELECT * FROM `favourite` WHERE `customer_mobile` = '" . $user["mobile"] . "'");
+            $favourite_num = $favourite_rs->num_rows;
+
+            if($favourite_num == 0){
+?>
+ <div class="row" style="display: flex; align-items: center; justify-content: center;">
+                    <div class="col s12 emptyCart teal lighten-5 teal-text">Favourite is Empty</div>
+                </div>
+<?php
+            }else{
+                ?>
+ <div class="row">
+                <?php
+                for ($i = 0; $i < $favourite_num; $i++) {
+                    $favourite_data = $favourite_rs->fetch_assoc();
+                    $product_rs = Database::search("SELECT * FROM `product` WHERE `id` ='" . $favourite_data["product_id"] . "'");
+                    $product_data = $product_rs->fetch_assoc();
+                ?>
+                    <div class="col s12 l3">
+                        <div class="card" style="padding-bottom: 10px;">
+                            <div class="card-image">
+                                <img src="<?php echo ($product_data["pic"]); ?>" class="pro-img">
+                                <span class="card-title pro-title"><?php echo ($product_data["product_name"]); ?></span>
+                            </div>
+                            <div class="card-content">
+                                <p class="price-label" style="padding-bottom: 30px;">Rs. <?php echo ($product_data["price"]); ?>.00</p>
+                                <div class="col s12">
+                                    <div class="row">
+                                        <button class="col s2 offset-s3" style="border: none; background-color: transparent;" onclick="deleteFromFavourite(<?php echo ($product_data['id']); ?>);"><i class="material-icons light-green-text">favorite</i></button>
+                                        <?php
+                                        $cart_rs = Database::search("SELECT * FROM `cart` WHERE `customer_mobile` = '" . $user["mobile"] . "' AND `product_id` = '" . $product_data["id"] . "'");
+                                        $cart_num = $cart_rs->num_rows;
+                                        if ($cart_num == 0) {
+                                        ?>
+                                            <button class="col s2 " id="cart_button<?php echo ($product_data['id']); ?>" style="border: none; background-color: transparent;" onclick="addToCartFromFavourite('<?php echo ($product_data['id']); ?>');"><i class="material-icons teal-text"  >local_grocery_store</i></button>
+
+                                        <?php
+                                        } else {
+                                        ?>
+                                            <button class="col s2" style="border: none; background-color: transparent;" id="cart_button<?php echo ($product_data['id']); ?>" onclick="deleteFromCart(<?php echo ($product_data['id']); ?>);"><i class="material-icons light-green-text">local_grocery_store</i></button>
+
+                                        <?php
+                                        }
+                                        ?>
+                                        <button class="col s2" style="border: none; background-color: transparent;"><i class="material-icons teal-text">payment</i></button>
                                     </div>
-                                    <div class="col s2"><i class="material-icons teal-text">payment</i></div>
                                 </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
-                </div>
-                <div class="col s12 l3">
-                    <div class="card" style="padding-bottom: 10px;">
-                        <div class="card-image">
-                            <img src="Resources/product6.jpg" class="pro-img">
-                            <span class="card-title pro-title">Cup Cake</span>
-                        </div>
-                        <div class="card-content">
-                            <p class="price-label" style="padding-bottom: 30px;">Rs. 1000.00</p>
-                            <div class="col s12">
-                                <div class="row">
-                                    <div class="col s2 offset-s3"><i class="material-icons teal-text">favorite</i></div>
-                                    <div class="col s2"><i class="material-icons teal-text">local_grocery_store</i>
-                                    </div>
-                                    <div class="col s2"><i class="material-icons teal-text">payment</i></div>
-                                </div>
-                            </div>
-                        </div>
+                <?php
+                }
+                ?>
 
-                    </div>
-                </div>
-                <div class="col s12 l3">
-                    <div class="card" style="padding-bottom: 10px;">
-                        <div class="card-image">
-                            <img src="Resources/product3.jpg" class="pro-img">
-                            <span class="card-title pro-title">Pita Bread</span>
-                        </div>
-                        <div class="card-content">
-                            <p class="price-label" style="padding-bottom: 30px;">Rs. 1000.00</p>
-                            <div class="col s12">
-                                <div class="row">
-                                    <div class="col s2 offset-s3"><i class="material-icons teal-text">favorite</i></div>
-                                    <div class="col s2"><i class="material-icons teal-text">local_grocery_store</i>
-                                    </div>
-                                    <div class="col s2"><i class="material-icons teal-text">payment</i></div>
-                                </div>
-                            </div>
-                        </div>
 
-                    </div>
-                </div>
-                <div class="col s12 l3">
-                    <div class="card" style="padding-bottom: 10px;">
-                        <div class="card-image">
-                            <img src="Resources/product5.jpg" class="pro-img">
-                            <span class="card-title pro-title">Fruit Cake</span>
-                        </div>
-                        <div class="card-content">
-                            <p class="price-label" style="padding-bottom: 30px;">Rs. 1000.00</p>
-                            <div class="col s12">
-                                <div class="row">
-                                    <div class="col s2 offset-s3"><i class="material-icons teal-text">favorite</i></div>
-                                    <div class="col s2"><i class="material-icons teal-text">local_grocery_store</i>
-                                    </div>
-                                    <div class="col s2"><i class="material-icons teal-text">payment</i></div>
-                                </div>
-                            </div>
-                        </div>
 
-                    </div>
-                </div>
             </div>
+                <?php
+            }
+
+            ?>
+           
         </div>
         <div class="col l3 s12 teal lighten-4 cart-div" style="padding: 20px;">
             <div class="row">
@@ -113,7 +89,7 @@
                 <div class="col s12" style="margin-top: 10px;">
                     <div class="row">
                         <div class="col s6 summary-name">No. of Items</div>
-                        <div class="col s6 summary-price">4</div>
+                        <div class="col s6 summary-price"><?php echo ($favourite_num); ?></div>
                     </div>
                 </div>
 
@@ -125,44 +101,18 @@
                     <a class="waves-effect waves-light btn-small cart-button1">Buy All</a>
                 </div>
                 <div class="col s12">
-                    <a class="waves-effect waves-light btn-small cart-button1">Remove All</a>
+                    <a class="waves-effect waves-light btn-small cart-button1" onclick="FavouriteRemoveAll();">Remove All</a>
                 </div>
-                <div class="col s12">
-                    <a class="waves-effect waves-light btn-small cart-button1">Cart</a>
-                </div>
-                <div class="col s12">
+                <!-- <div class="col s12">
+                    <a class="waves-effect waves-light btn-small cart-button1" onclick="window.location = 'cart.php';">Cart</a>
+                </div> -->
+                <!-- <div class="col s12">
                     <a class="waves-effect waves-light btn-small cart-button1">Recents</a>
-                </div>
+                </div> -->
             </div>
         </div>
 
     </div>
-    <footer class="page-footer teal lighten-2">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text footer-title-word">WebShop</h5>
-                    <p class="grey-text text-lighten-4">"Creating delightful and innovative bakery products that bring
-                        joy and quality to every bite."</p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Explore</h5>
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Products</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Search</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container center-align">
-                © All copyRights Reserved | Developed by <b>WebStudio</b>
-
-            </div>
-        </div>
-    </footer>
 
 
 
@@ -171,35 +121,9 @@
 
 
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('.sidenav');
-            var instances = M.Sidenav.init(elems, {});
-        });
 
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('.carousel');
-            var options = {
-                duration: 200, // Set the desired duration in milliseconds
-                fullWidth: true, // Make the carousel full width
-                indicators: true, // Show indicators
-                autoplay: true // Custom option for autoplay
-            };
-            var instances = M.Carousel.init(elems, options);
 
-            // Set interval for auto-changing slides
-            setInterval(() => {
-                instances.forEach(instance => instance.next());
-            }, 5000); // Change slide every 5000 milliseconds (5 seconds)
-        });
-
-        document.addEventListener('DOMContentLoaded', function () {
-            var elems = document.querySelectorAll('.modal');
-            var instances = M.Modal.init(elems, {});
-        });
-
-    </script>
-    <script src="script.js"></script>
+    <?php include "bottom.php"; ?>
 </body>
 
 </html>

@@ -244,7 +244,15 @@ body {
 .cart-body {
     overflow-x: hidden;
 }
-
+.emptyCart{
+    font-family: "Playwrite DE Grund";
+    font-size: 40px;
+    font-weight: bold; 
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content:  center;
+}
 .cart-title {
     font-family: "Playwrite DE Grund";
     font-size: 40px;

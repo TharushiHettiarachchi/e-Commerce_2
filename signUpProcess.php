@@ -39,7 +39,7 @@ if (empty($fname)) {
     $tz = new DateTimeZone("Asia/Colombo");
     $d->setTimezone($tz);
     $date = $d->format("Y-m-d H:i:s");
-    Database::iud("INSERT INTO `customer`( `mobile`, `fname`, `lname`, `email`, `password`, `date_joined`) VALUES('" . $mobile . "','" . $fname . "','" . $lname . "','" . $email . "','" . $password . "','" . $date . "')");
+    Database::iud("INSERT INTO `customer`( `mobile`, `fname`, `lname`, `email`, `password`, `date_joined`,`gender_id`) VALUES('" . $mobile . "','" . $fname . "','" . $lname . "','" . $email . "','" . $password . "','" . $date . "','1')");
     echo("Successfully Signed Up");
    }
 

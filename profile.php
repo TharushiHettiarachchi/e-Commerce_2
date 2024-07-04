@@ -2,14 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="Resources/icon.png">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
+    <?php include "top.php"; ?>
     <title>WebShop - Dashboard</title>
 </head>
 
@@ -24,8 +17,8 @@
             </div>
             <div class="row  profile-div teal lighten-4" style="display: flex; align-items: center; justify-content: center; height: 80vh; flex-direction: column;">
                 <div class="profile-profile-img" style="background-image: url('Resources/prof1.jpg');"></div>
-                <div class="col s12 prof-name center-align teal-text">Tharushi Hettiarachchi</div>
-                <div class="col s12 prof-email center-align">tharushihettiarachchi12@gmail.com</div>
+                <div class="col s12 prof-name center-align teal-text"><?php echo ($user["fname"] . " " . $user["lname"]); ?></div>
+                <div class="col s12 prof-email center-align"><?php echo ($user["email"]); ?></div>
 
             </div>
 
@@ -35,81 +28,114 @@
             <div class="row">
                 <div class="col s12 prof-form">Personal Details</div>
                 <div class="input-field col s6">
-                    <input id="first_name" type="text" class="validate">
+                    <input id="first_name" value="<?php echo ($user["fname"]); ?>" type="text" class="validate">
                     <label for="first_name">First Name</label>
                 </div>
                 <div class="input-field col s6">
-                    <input id="last_name" type="text" class="validate">
+                    <input id="last_name" value="<?php echo ($user["lname"]); ?>" type="text" class="validate">
                     <label for="last_name">Last Name</label>
                 </div>
                 <div class="input-field col s6">
-                    <input id="mobile" type="text" class="validate">
+                    <input id="mobile" value="<?php echo ($user["mobile"]); ?>" type="text" class="validate" disabled>
                     <label for="mobile">Mobile Number</label>
                 </div>
                 <div class="input-field col s6">
-                    <input id="email" type="text" class="validate">
+                    <input id="email" value="<?php echo ($user["email"]); ?>" type="text" class="validate">
                     <label for="email">Email</label>
                 </div>
-                <div class="input-field col s6">
-                    <input id="dj" type="text" class="validate">
+                <div class="input-field col s6" style="margin-top: 30px;">
+                    <input id="dj" value="<?php echo ($user["date_joined"]); ?>" type="text" class="validate" disabled>
                     <label for="dj">Date Joined</label>
                 </div>
-                <div class="input-field col s6">
-                    <input id="gender" type="text" class="validate">
-                    <label for="gender">Gender</label>
+                <div class="input-field col s6 m-0">
+                    <div class="input-field col s12">
+                       
+                       
+                            <select id="gender">
+                                <option value="" disabled>Select</option>
+                                <?php
+                              
+                                $gender_rs = Database::search("SELECT * FROM `gender`");
+                                $gender_num = $gender_rs->num_rows;
+                                for ($i = 0; $i < $gender_num; $i++) {
+                                    $gender_data = $gender_rs->fetch_assoc();
+                                ?>
+                                    <option value="<?php echo ($gender_data["id"]); ?>" <?php if($user["gender_id"] == $gender_data["id"]){ ?> selected <?php } ?>><?php echo ($gender_data["name"]); ?></option>
+
+                                <?php
+                                }
+                                ?>
+
+
+                            </select>
+                       
+
+                        <label>Gender</label>
+                    </div>
+
                 </div>
             </div>
             <div class="row">
                 <div class="col s12 prof-form">Login Details</div>
                 <div class="input-field col s6">
-                    <input id="first_name" type="text" class="validate">
-                    <label for="first_name">First Name</label>
+                    <input id="first_name" value="<?php echo ($user["mobile"]); ?>" type="text" class="validate" disabled>
+                    <label for="first_name">Username</label>
                 </div>
                 <div class="input-field col s6">
-                    <input id="last_name" type="text" class="validate">
-                    <label for="last_name">Last Name</label>
+                    <input id="password" value="<?php echo ($user["password"]); ?>" type="password" class="validate">
+                    <label for="password">Password</label>
                 </div>
 
             </div>
             <div class="row">
                 <div class="col s12 prof-form">Billing Details</div>
                 <div class="input-field col s6">
-                    <input id="first_name" type="text" class="validate">
-                    <label for="first_name">Address Line 1</label>
+                    <input id="line1" type="text" class="validate">
+                    <label for="line1">Address Line 1</label>
                 </div>
                 <div class="input-field col s6">
-                    <input id="last_name" type="text" class="validate">
-                    <label for="last_name">Address Line 2</label>
+                    <input id="line2" type="text" class="validate">
+                    <label for="line2">Address Line 2</label>
                 </div>
                 <div class="input-field col s6">
-                    <input id="mobile" type="text" class="validate">
-                    <label for="mobile">City</label>
+                <select id="gender">
+                                <option value="" disabled>Select</option>
+                                <?php
+                              
+                                $city_rs = Database::search("SELECT * FROM `city`");
+                                $city_num = $city_rs->num_rows;
+                                for ($i = 0; $i < $city_num; $i++) {
+                                    $city_data = $city_rs->fetch_assoc();
+$address_rs = Database::search("SELECT * FROM `address`");
+                                ?>
+                                    <option value="<?php echo ($gender_data["id"]); ?>" <?php if($address_data["city_id"] == $city_data["id"]){ ?> selected <?php } ?>><?php echo ($gender_data["name"]); ?></option>
+
+                                <?php
+                                }
+                                ?>
+
+
+                            </select>
+                       
+
+                        <label>City</label>
                 </div>
                 <div class="input-field col s6">
-                    <input id="email" type="text" class="validate">
-                    <label for="email">Postal Code</label>
+                    <input id="postal" type="text" class="validate" disabled>
+                    <label for="postal">Postal Code</label>
                 </div>
 
             </div>
             <div class="col s12">
-                <a class="waves-effect waves-light btn-small cart-button1">SAVE </a>
+                <a class="waves-effect waves-light btn-small cart-button1" onclick="saveProfile();">SAVE </a>
             </div>
         </div>
 
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('.sidenav');
-            var instances = M.Sidenav.init(elems, {});
-        });
 
-        document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('.collapsible');
-            var instances = M.Collapsible.init(elems, {});
-        });
-    </script>
-    <script src="script.js"></script>
+
+    <?php include "bottom.php"; ?>
 
 
 
