@@ -416,7 +416,7 @@ function FavouriteRemoveAll() {
 }
 
 
-// Profile-------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------Profile-------------------------------------------------------------------------------
 
 function saveProfile(){
 var fname = document.getElementById("first_name");
@@ -463,7 +463,27 @@ var form = new FormData();
 }
 
 
+function setPostalCode(){
+   
+    var city = document.getElementById("city").value;
+    var postal = document.getElementById("postal");
 
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = function () {
+        if (request.status == 200 & request.readyState == 4) {
+            var response = request.responseText;
+           
+          postal.value = response;
+
+
+        }
+
+    }
+    request.open("GET", "setPostalId.php?id= " + city, true);
+    request.send();
+
+  
+}
 
 
 

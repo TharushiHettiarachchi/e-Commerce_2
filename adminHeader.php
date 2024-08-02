@@ -41,20 +41,20 @@
             <span class="teal-text darken-2-text side-span1">Tharushi Hettiarachchi</span>
             <span class="grey-text lighten-1-text side-span2">tharushihettiarachchi12@gmail.com</span>
             <a class="waves-effect waves-light btn-small side-button1"
-                onclick="window.location = 'adminDashboard.html';">
+                onclick="window.location = 'adminDashboard.php';">
                 <i class="material-icons left">home</i>Dashboard</a>
             <a class="waves-effect waves-light btn-small side-button1"
-                onclick="window.location = 'manageProduct.html';"><i
+                onclick="window.location = 'manageProduct.php';"><i
                     class="material-icons left">local_grocery_store</i>Manage Products</a>
-            <a class="waves-effect waves-light btn-small side-button1" onclick="window.location = 'orders.html';"><i
+            <a class="waves-effect waves-light btn-small side-button1" onclick="window.location = 'orders.php';"><i
                     class="material-icons left">favorite</i>Orders</a>
-            <a class="waves-effect waves-light btn-small side-button1" onclick="window.location = '#.html';"><i
+            <a class="waves-effect waves-light btn-small side-button1" onclick="window.location = '#.php';"><i
                     class="material-icons left">local_mall</i>
                 Manage Customers</a>
-            <a class="waves-effect waves-light btn-small side-button1" onclick="window.location = '#.html';"><i
+            <a class="waves-effect waves-light btn-small side-button1" onclick="window.location = '#.php';"><i
                     class="material-icons left">payment</i>Payment
                 History</a>
-            <a class="waves-effect waves-light btn-small side-button1" onclick="window.location = 'profile.html';"><i
+            <a class="waves-effect waves-light btn-small side-button1" onclick="window.location = 'profile.php';"><i
                     class="material-icons left">account_circle</i>Profile</a>
             <a class="waves-effect waves-light btn-small side-button1"><i
                     class="material-icons left">chat</i>Messages</a>

@@ -49,26 +49,26 @@
                 </div>
                 <div class="input-field col s6 m-0">
                     <div class="input-field col s12">
-                       
-                       
-                            <select id="gender">
-                                <option value="" disabled>Select</option>
-                                <?php
-                              
-                                $gender_rs = Database::search("SELECT * FROM `gender`");
-                                $gender_num = $gender_rs->num_rows;
-                                for ($i = 0; $i < $gender_num; $i++) {
-                                    $gender_data = $gender_rs->fetch_assoc();
-                                ?>
-                                    <option value="<?php echo ($gender_data["id"]); ?>" <?php if($user["gender_id"] == $gender_data["id"]){ ?> selected <?php } ?>><?php echo ($gender_data["name"]); ?></option>
-
-                                <?php
-                                }
-                                ?>
 
 
-                            </select>
-                       
+                        <select id="gender">
+                            <option value="" >Select</option>
+                            <?php
+
+                            $gender_rs = Database::search("SELECT * FROM `gender`");
+                            $gender_num = $gender_rs->num_rows;
+                            for ($i = 0; $i < $gender_num; $i++) {
+                                $gender_data = $gender_rs->fetch_assoc();
+                            ?>
+                                <option value="<?php echo ($gender_data["id"]); ?>" <?php if ($user["gender_id"] == $gender_data["id"]) { ?> selected <?php } ?>><?php echo ($gender_data["gender"]); ?></option>
+
+                            <?php
+                            }
+                            ?>
+
+
+                        </select>
+
 
                         <label>Gender</label>
                     </div>
@@ -98,30 +98,40 @@
                     <label for="line2">Address Line 2</label>
                 </div>
                 <div class="input-field col s6">
-                <select id="gender">
-                                <option value="" disabled>Select</option>
-                                <?php
-                              
-                                $city_rs = Database::search("SELECT * FROM `city`");
-                                $city_num = $city_rs->num_rows;
-                                for ($i = 0; $i < $city_num; $i++) {
-                                    $city_data = $city_rs->fetch_assoc();
-$address_rs = Database::search("SELECT * FROM `address`");
-                                ?>
-                                    <option value="<?php echo ($gender_data["id"]); ?>" <?php if($address_data["city_id"] == $city_data["id"]){ ?> selected <?php } ?>><?php echo ($gender_data["name"]); ?></option>
+                    <select id="city" onchange="setPostalCode();">
+                        <option value="0">Select</option>
+                        <?php
 
-                                <?php
-                                }
-                                ?>
+                        $city_rs = Database::search("SELECT * FROM `city`");
+                        $city_num = $city_rs->num_rows;
+                        for ($i = 0; $i < $city_num; $i++) {
+                            $city_data = $city_rs->fetch_assoc();
+                            $address_rs = Database::search("SELECT * FROM `address` WHERE `customer_mobile` = '" . $user["mobile"] . "'");
+                            $address_num = $address_rs->num_rows;
+                            if ($address_num  > 0) {
+                                $address_data = $address_rs->fetch_assoc();
+
+                        ?>
+                                <option value="<?php echo ($city_data["id"]); ?>" <?php if ($address_data["city_id"] == $city_data["id"]) { ?> selected <?php } ?> ><?php echo ($city_data["name"]); ?></option>
+
+                            <?php
+                            } else {
+                            ?>
+                                <option value="<?php echo ($city_data["id"]); ?>" ><?php echo ($city_data["name"]); ?></option>
+
+                        <?php
+                            }
+                        }
+                        ?>
 
 
-                            </select>
-                       
+                    </select>
 
-                        <label>City</label>
+
+                    <label>City</label>
                 </div>
                 <div class="input-field col s6">
-                    <input id="postal" type="text" class="validate" disabled>
+                    <input id="postal" value=" " type="text" class="validate" disabled>
                     <label for="postal">Postal Code</label>
                 </div>
 

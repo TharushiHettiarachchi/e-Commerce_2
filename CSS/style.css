@@ -630,7 +630,7 @@ flex-direction: column; */
 
 .ad-pro-img{
     height: 400px;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
 }

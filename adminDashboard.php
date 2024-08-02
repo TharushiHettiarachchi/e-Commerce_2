@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-   
+<?php include "top.php"; ?>
     <title>WebShop - Admin Dashboard</title>
 </head>
 
